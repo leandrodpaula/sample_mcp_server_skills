@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.13-slim
 
 # Evitar gravação de bytecode e forçar log unbuffered
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -13,8 +13,8 @@ WORKDIR /app
 # Instalar 'uv' utilizando o script oficial no path
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
-# Copiar arquivos de projeto
-COPY pyproject.toml uv.lock ./
+# Copiar arquivos de projeto base
+COPY pyproject.toml uv.lock README.md ./
 
 # Instalar dependências de forma gerenciada
 RUN uv sync --frozen --no-cache
