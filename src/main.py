@@ -40,11 +40,10 @@ def create_app() -> FastMCP:
 mcp = create_app()
 
 def run():
-    transport = "sse" if settings.MCP_TRANSPORT in ("http", "sse") else "stdio"
-    if transport == "sse":
-        mcp.run(transport=transport, host="0.0.0.0", port=settings.PORT)
+    if settings.MCP_TRANSPORT == "http":
+        mcp.run(transport="http", host="0.0.0.0", port=settings.PORT)
     else:
-        mcp.run(transport=transport)
+        mcp.run(transport=settings.MCP_TRANSPORT)
 
 if __name__ == "__main__":
     run()
