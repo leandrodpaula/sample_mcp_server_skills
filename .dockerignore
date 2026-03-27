@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE / Editor folders
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Pytest and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+# Comentando a pasta tests para o caso de querer rodar testes no docker no futuro, mas por padrão ignoramos
+tests/
+
+# Git
+.git/
+.gitignore
+
+# Terraform e arquivos locais (não devem ir pra imagem de prod)
+terraform/
+terraform.sh
+build.sh
+
+# Volumes de dados locais do projeto
+data/
+skills/
+docs/
